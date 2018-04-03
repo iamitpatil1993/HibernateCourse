@@ -4,7 +4,6 @@
 	version="1.0">
 
 	<persistence-unit name="JPADB" transaction-type="RESOURCE_LOCAL">
-		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
 		
 			<!-- Database connection properties -->
