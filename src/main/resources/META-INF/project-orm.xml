@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm 
+        http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+
+	<entity class="com.example.hibernate.model.Project" access="FIELD">
+		<table name="project"/>
+		<attributes>
+			<id name="projectId">
+				<column name="project_id"/>
+				<generated-value strategy="IDENTITY"/>
+			</id>
+			<basic name="projectName">
+				<column name="project_name"/>
+			</basic>
+		</attributes>
+	</entity>
+	</entity-mappings>

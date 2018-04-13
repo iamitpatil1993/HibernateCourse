@@ -36,7 +36,7 @@ public class HelloWorld {
 		message.setMessage("Hello World Hibernate");
 		
 		entityManager.persist(message);
-		entityTransaction.commit();
+		entityTransaction.rollback();
 		entityManager.close();
 		System.out.println("Message created with messageId :: " + message.getMessageId());
 		return message.getMessageId();
