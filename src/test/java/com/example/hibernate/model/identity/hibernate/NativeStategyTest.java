@@ -1,0 +1,44 @@
+package com.example.hibernate.model.identity.hibernate;
+
+import static org.junit.Assert.assertNotNull;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class NativeStategyTest {
+
+	private EntityManagerFactory entityManagerFactory;
+	private EntityManager em;
+	private EntityTransaction entityTransaction;
+	
+	@Before
+	public void beforeTest() {
+		entityManagerFactory = Persistence.createEntityManagerFactory("JPADB");
+		em = entityManagerFactory.createEntityManager();
+		entityTransaction = em.getTransaction();
+		entityTransaction.begin();
+	}
+	
+	@After
+	public void afterTest() {
+		entityTransaction.commit();
+		em.close();
+	}
+
+	@Test
+	public void test() {
+		NativeStategy nativeStategy = new NativeStategy();
+		em.persist(nativeStategy);
+		assertNotNull(nativeStategy.getId());
+		
+		// Native strategy uses Sequence strategy with Postrgres database
+		
+	}
+
+}

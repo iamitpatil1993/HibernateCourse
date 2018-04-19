@@ -7,13 +7,6 @@
 	<version>1.0</version>
 
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- Only hibernate core dependency is required for core ORM functionality, 
 			other dependencies like entity-manager, hibernate-common-annotation etc are 
 			not required now, all of these dependencies are now merged to this single 
@@ -35,6 +28,13 @@
 			<artifactId>postgresql</artifactId>
 			<version>9.1-901-1.jdbc4</version>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 
