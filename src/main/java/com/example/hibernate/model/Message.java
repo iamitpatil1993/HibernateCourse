@@ -18,7 +18,7 @@ public class Message implements Serializable {
 
 	@Basic
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name = "message_id")
 	private Long messageId;
 	
