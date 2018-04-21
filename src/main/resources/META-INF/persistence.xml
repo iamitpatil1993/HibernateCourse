@@ -36,6 +36,7 @@
 
 			<!-- Schema update configuration -->
 			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property value="true" name="hibernate.id.new_generator_mappings"/>
 		</properties>
 	</persistence-unit>
 
