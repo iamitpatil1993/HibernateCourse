@@ -40,6 +40,12 @@
 			
 			<!-- Stop propagation of constraints to ddl statements -->
 			<property name=" hibernate.validator.apply_to_ddl " value="false"/>
+			
+			<!-- Since bean validation is by default is on, i.e if there is a bean validation implementation libraries in class path, then
+			jpa will automatically validate entities if they are annotaed with javax.validation annotations. If you want to disable bean validation at all
+			or want to change the beahaviour then use this property with threee different values AUTO, CALLBACK, NONE. Check documentation for this property for more information
+			 -->
+			 <property name="javax.persistence.validation.mode" value="NONE"/>
 		</properties>
 	</persistence-unit>
 
