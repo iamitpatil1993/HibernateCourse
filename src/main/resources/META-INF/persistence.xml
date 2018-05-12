@@ -37,6 +37,9 @@
 			<!-- Schema update configuration -->
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property value="true" name="hibernate.id.new_generator_mappings"/>
+			
+			<!-- Stop propagation of constraints to ddl statements -->
+			<property name=" hibernate.validator.apply_to_ddl " value="false"/>
 		</properties>
 	</persistence-unit>
 
