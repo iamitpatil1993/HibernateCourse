@@ -49,7 +49,7 @@
 
 			<!-- Stop propagation of constraints to ddl statements -->
 			<property name=" hibernate.validator.apply_to_ddl "
-				value="false" />
+				value="true" />
 
 			<!-- Since bean validation is by default is on, i.e if there is a bean 
 				validation implementation libraries in class path, then jpa will automatically 

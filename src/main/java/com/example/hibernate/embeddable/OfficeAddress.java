@@ -7,6 +7,8 @@ import javax.persistence.AccessType;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Embeddable
 @Access(AccessType.FIELD)
@@ -15,6 +17,8 @@ public class OfficeAddress implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Basic
+	@NotNull
+	@Size(max = 20)
 	@Column(name = "office_number")
 	private String officeNo;
 	

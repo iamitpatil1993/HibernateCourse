@@ -7,6 +7,9 @@ import javax.persistence.AccessType;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Embeddable
 @Access(AccessType.FIELD)
@@ -15,22 +18,32 @@ public class Address implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Basic
+	@NotNull
+	@Size(max = 30)
 	@Column(name = "city")
 	private String city;
 
 	@Basic
+	@NotNull
+	@Size(max = 60)
 	@Column(name = "street")
 	private String street;
 
 	@Basic
+	@NotNull
+	@Size(max = 50)
 	@Column(name = "state")
 	private String state;
 
 	@Basic
+	@NotNull
+	@Size(max = 40)
 	@Column(name = "country")
 	private String coluntry;
 
 	// @Embeddable no need of this annotation this is implicit
+	@NotNull
+	@Valid
 	private OfficeAddress officeLocation;
 
 	public Address(String city, String street, String state, String coluntry, OfficeAddress officeAddress) {

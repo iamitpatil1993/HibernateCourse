@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "user_embeddable_demo")
@@ -26,6 +28,8 @@ public class User implements Serializable {
 
 	// @Embedded annotation is optional, hibernate knows this object is embeddable
 	@AttributeOverride(name = "officeLocation.officeNo", column = @Column(name = "office_no"))
+	@NotNull
+	@Valid
 	private Address address;
 
 	public Address getAddress() {
