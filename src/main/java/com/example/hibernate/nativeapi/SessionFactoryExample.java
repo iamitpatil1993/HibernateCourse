@@ -1,5 +1,7 @@
 package com.example.hibernate.nativeapi;
 
+import java.util.Arrays;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -8,7 +10,10 @@ import com.example.hibernate.model.Message;
 public class SessionFactoryExample {
 
 	public static void main(String[] args) {
-		createMessage();
+		
+		String[] arr = "sas,as,d".split(",");
+		System.out.println(Arrays.asList(arr));
+		//createMessage();
 	}
 
 	private static Long createMessage() {
