@@ -16,6 +16,8 @@ public class BaseTest {
 
 	@Before
 	public void beforeTest() {
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
 		entityManagerFactory = Persistence.createEntityManagerFactory("JPADB");
 		em = entityManagerFactory.createEntityManager();
 		entityTransaction = em.getTransaction();

@@ -65,15 +65,24 @@
 			<version>3.0.1-b09</version>
 		</dependency>
 
-		<!-- To do logging in Hibernate, you need “slf4j-api.jar” and your preferred binding, like log4j “slf4j-log4j12.jar“ -->
-		<!-- The slf4j-api.jar is defined as the dependency of “hibernate-core“, so , you do not need to declare it again. -->
-		<!-- refer this	https://www.mkyong.com/hibernate/how-to-display-hibernate-sql-parameter-values-log4j/ -->
+		<!-- To do logging in Hibernate, you need “slf4j-api.jar” and your preferred 
+			binding, like log4j “slf4j-log4j12.jar“ -->
+		<!-- The slf4j-api.jar is defined as the dependency of “hibernate-core“, 
+			so , you do not need to declare it again. -->
+		<!-- refer this https://www.mkyong.com/hibernate/how-to-display-hibernate-sql-parameter-values-log4j/ -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.25</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.5</version>
+		</dependency>
+
 	</dependencies>
 
 
