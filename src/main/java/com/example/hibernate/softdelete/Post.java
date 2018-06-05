@@ -44,9 +44,12 @@ public class Post extends BaseEntity implements Serializable {
 	private String text;
 
 	@OneToMany(mappedBy = "post")
+	// @Where(clause = "is_deleted = false") No ned to add this here since where clasue on PostComment will add default filter to PostComment query
 	private Set<PostComment> comments = new HashSet<>();
 	
-	@OneToOne(mappedBy = "post", cascade = {CascadeType.PERSIST})
+	@OneToOne(cascade = {CascadeType.PERSIST})
+	@JoinColumn(name = "post_detail_id")
+	@Where(clause = "is_deleted = false")// This has no effect on single value associations, only works for collection associations
 	private PostDetail postDetail;
 
 	public PostDetail getPostDetail() {
@@ -95,4 +98,14 @@ public class Post extends BaseEntity implements Serializable {
 		detail.setPost(this);
 		this.setPostDetail(detail);
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public Set<PostComment> getComments() {
+		return comments;
+	}
+	
+	
 }

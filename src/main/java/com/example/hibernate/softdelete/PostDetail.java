@@ -35,9 +35,8 @@ public class PostDetail extends BaseEntity {
 	@Basic
 	private Long postId;
 
-	@OneToOne
+	@OneToOne(mappedBy = "postDetail")
 	@MapsId
-	@JoinColumn(name = "post_id")
 	private Post post;
 
 	@Basic
